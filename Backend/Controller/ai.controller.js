@@ -7,6 +7,5 @@ exports.generateCodeReview = async (req, res)=>{
     }
 
     const result = await AiService(code);
-    console.log(result)
     res.send(result);
 }

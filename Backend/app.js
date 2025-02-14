@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 const cors = require('cors');
+require('dotenv').config();
 const aiRoutes = require('./routes/ai.routes');
 
 // view engine setup

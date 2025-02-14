@@ -1,0 +1,255 @@
+/*Boiler plate css*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  overflow: hidden;
+}
+
+
+/*Navbar.jsx (component) --> {../Frontend/Components/Navbar.jsx} styling*/
+#logo{
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 150px;
+  margin-top: -10px;
+  user-select: none;
+}
+
+main{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+
+.input-container{
+  display: block;
+  height: 80vh;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.input-container .scroller{
+  display: block;
+  position: relative;
+  height: 88%;
+  background-color: transparent;
+  overflow-y: scroll;
+  background-color: black;
+}
+
+.input-container .scroller::-webkit-scrollbar{
+  width: 7px;
+}
+.input-container .scroller::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.input-container .scroller::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 194, 113);
+  border-radius: 10px;
+}
+
+.input-container .editor::-webkit-scrollbar{
+  width: 7px;
+}
+.input-container .editor::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.input-container .editor::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 194, 113);
+  border-radius: 10px;
+}
+
+.input-container #review{
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 99%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(0, 194, 113);
+  user-select: none;
+}
+
+.input-container #review:hover{
+  background-color: rgb(0, 175, 102);
+}
+.input-container #review:active{
+  outline: none;
+  transform: scale(0.99) translateX(-50.5%);
+  background-color: rgb(0, 158, 92);
+}
+
+pre, code {
+  background: black !important; /* Override Prism's default grey background */
+}
+
+pre[class*="language-"] {
+  background: black !important;
+}
+
+code[class*="language-"] {
+  background: black !important;
+}
+
+
+.output-container{
+  display: block;
+  height: 80vh;
+  background-color: rgb(24, 24, 24);
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  width: 50%;
+  overflow: hidden;
+}
+
+
+
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%, 0% {
+    stroke: rgb(0, 194, 113);
+  }
+  40% {
+    stroke: rgb(0, 194, 113);
+  }
+  66% {
+    stroke: rgb(0, 194, 113);
+  }
+  80%, 90% {
+    stroke: rgb(0, 194, 113);
+  }
+}
+
+
+.showbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.output-container .scroller::-webkit-scrollbar{
+  width: 7px;
+}
+.output-container .scroller::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.output-container .scroller::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 194, 113);
+  border-radius: 10px;
+}
+
+.output-container .scroller{
+  display: block;
+  position: relative;
+  width: 98%;
+  height: 98%;
+  background-color: rgb(24, 24, 24);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.output-container .scroller pre{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(24, 24, 24);
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+
+}
+
+.output-container .scroller pre::-webkit-scrollbar{
+  width: 7px;
+  height: 5px;
+}
+.output-container .scroller pre::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.output-container .scroller pre::-webkit-scrollbar-thumb{
+  background-color: rgb(0, 194, 113);
+  border-radius: 10px;
+}
